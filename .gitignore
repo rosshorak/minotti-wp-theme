@@ -1,0 +1,56 @@
+# Dependencies
+/node_modules
+/vendor
+
+# Build files
+/dist
+
+# IDE files
+/.fleet
+/.idea
+/.nova
+/.vscode
+/.zed
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Cache and temp files
+.cache/
+.sass-cache/
+*.tmp
+*.temp
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# WordPress specific
+wp-config-local.php
+.htaccess
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Package manager files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+composer.lock
+
+# Backup files
+*.bak
+*~

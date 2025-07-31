@@ -1,0 +1,60 @@
+
+/*WPForms in general*/
+.menu-item-has-children {
+    @apply relative;
+}
+
+.sub-menu {
+    @apply absolute top-full left-0 bg-[#1e1e1e] min-w-[200px] opacity-0 invisible transition-all duration-200 z-50;
+}
+
+.menu-item-has-children:hover .sub-menu {
+    @apply opacity-100 visible;
+}
+
+/*WPForms in general*/
+form.wpforms-form {
+    .wpforms-field {
+        @apply py-2;
+    }
+    .wpforms-field-label {
+        @apply font-medium !mb-1 !text-sm;
+    }
+    button[type=submit] {
+        @apply !bg-[#1e1e1e] !text-sm tracking-wider;
+    }
+}
+
+
+
+/*Contact Page*/
+#contact-page-contact-form-cont {
+    .wpforms-container {
+        @apply mt-0;
+    }
+}
+
+
+/*Footer*/
+
+#newsletter-footer-cont {
+    .wpforms-field {
+        @apply p-0;
+    }
+    .wpforms-field-container {
+        input[type=email] {
+            @apply bg-transparent border-0 rounded-none !border-b border-white text-white outline-none w-[300px];
+            &::placeholder {
+                @apply text-gray-300 text-xs font-semibold tracking-wider;
+            }
+            &:focus {
+                @apply outline-none outline-0 shadow-none;
+            }
+        }
+    }
+    .wpforms-submit-container {
+        button {
+            @apply text-xs uppercase border-0 border-white rounded-none bg-black tracking-wider font-medium;
+        }
+    }
+}
