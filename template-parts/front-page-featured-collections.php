@@ -6,7 +6,7 @@
  */
 ?>
 
-<section id="featured-collections" class="pt-24 pb-16 bg-gray-50">
+<section id="featured-collections" class="pt-28 pb-32 bg-gray-50">
     <div class="container mx-auto px-4 max-w-screen-2xl">
 
         <!-- Section Header -->
@@ -16,141 +16,48 @@
         </div>
 
         <!-- Collections Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <?php if (have_rows('featured_collection')): ?>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            <!-- Collection 1: Sofas -->
-            <div class="group cursor-pointer">
-                <a href="https://www.minotti.com/en/sofas" target="_blank" class="block">
-                    <div class="relative overflow-hidden bg-white">
-                        <!-- Image container with aspect ratio -->
-                        <div class="aspect-[4/3] overflow-hidden">
-                            <img src="https://www.minotti.com/media/immagini/35847_t_ANTEPRIMA_sofas.jpg"
-                                    alt="Minotti Sofas Collection"
-                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        </div>
+                <?php while (have_rows('featured_collection')): the_row();
+                    $name = get_sub_field('name');
+                    $url = get_sub_field('url');
+                    $image = get_sub_field('image');
+                    ?>
 
-                        <!-- Content overlay -->
-                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+                    <!-- Collection Item -->
+                    <div class="group cursor-pointer">
+                        <a href="<?php echo esc_url($url); ?>" target="_blank" class="block">
+                            <!-- Image container with correct aspect ratio 1600x1000 = 8:5 -->
+                            <div class="aspect-[8/5] overflow-hidden bg-white">
+                                <?php if ($image): ?>
+                                    <img src="<?php echo esc_url($image['url']); ?>"
+                                        alt="<?php echo esc_attr($image['alt'] ?: $name . ' Collection'); ?>"
+                                        class="w-full h-full object-cover">
+                                <?php else: ?>
+                                    <!-- Fallback placeholder if no image -->
+                                    <div class="w-full h-full bg-gray-200 flex items-center justify-center">
+                                        <span class="text-gray-400 text-lg">No Image</span>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
 
-                        <!-- Text content -->
-                        <div class="absolute bottom-6 left-6 right-6 text-white">
-                            <h3 class="text-2xl font-light tracking-wide mb-2">Sofas</h3>
-                            <p class="text-sm uppercase tracking-wider opacity-90">Explore Collection →</p>
-                        </div>
+                            <!-- Collection Name - Always displays -->
+                            <div class="text-lg text-center leading-[20px] font-medium text-[rgb(30,30,30)] mt-4 uppercase tracking-widest">
+                                <?php echo esc_html($name); ?>
+                            </div>
+                        </a>
                     </div>
-                </a>
+
+                <?php endwhile; ?>
             </div>
 
-            <!-- Collection 2: Armchairs -->
-            <div class="group cursor-pointer">
-                <a href="https://www.minotti.com/en/armchairs" target="_blank" class="block">
-                    <div class="relative overflow-hidden bg-white">
-                        <div class="aspect-[4/3] overflow-hidden">
-                            <img src="https://www.minotti.com/media/immagini/35848_t_ANTEPRIMA_armchairs.jpg"
-                                    alt="Minotti Armchairs Collection"
-                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        </div>
-
-                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
-
-                        <div class="absolute bottom-6 left-6 right-6 text-white">
-                            <h3 class="text-2xl font-light tracking-wide mb-2">Armchairs</h3>
-                            <p class="text-sm uppercase tracking-wider opacity-90">Explore Collection →</p>
-                        </div>
-                    </div>
-                </a>
+        <?php else: ?>
+            <!-- Fallback content if no collections are added -->
+            <div class="text-center py-12">
+                <p class="text-gray-600">No featured collections have been added yet.</p>
             </div>
-
-            <!-- Collection 3: Tables -->
-            <div class="group cursor-pointer">
-                <a href="https://www.minotti.com/en/tables" target="_blank" class="block">
-                    <div class="relative overflow-hidden bg-white">
-                        <div class="aspect-[4/3] overflow-hidden">
-                            <img src="https://www.minotti.com/media/immagini/35849_t_ANTEPRIMA_tables.jpg"
-                                    alt="Minotti Tables Collection"
-                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        </div>
-
-                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
-
-                        <div class="absolute bottom-6 left-6 right-6 text-white">
-                            <h3 class="text-2xl font-light tracking-wide mb-2">Tables</h3>
-                            <p class="text-sm uppercase tracking-wider opacity-90">Explore Collection →</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Collection 4: Outdoor -->
-            <div class="group cursor-pointer">
-                <a href="https://www.minotti.com/en/outdoor" target="_blank" class="block">
-                    <div class="relative overflow-hidden bg-white">
-                        <div class="aspect-[4/3] overflow-hidden">
-                            <img src="https://www.minotti.com/media/immagini/35950_t_ANTEPRIMA_outdoor.jpg"
-                                    alt="Minotti Outdoor Collection"
-                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        </div>
-
-                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
-
-                        <div class="absolute bottom-6 left-6 right-6 text-white">
-                            <h3 class="text-2xl font-light tracking-wide mb-2">Outdoor</h3>
-                            <p class="text-sm uppercase tracking-wider opacity-90">Explore Collection →</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Collection 5: Accessories -->
-            <div class="group cursor-pointer">
-                <a href="https://www.minotti.com/en/accessories" target="_blank" class="block">
-                    <div class="relative overflow-hidden bg-white">
-                        <div class="aspect-[4/3] overflow-hidden">
-                            <img src="https://www.minotti.com/media/immagini/35851_t_ANTEPRIMA_accessories.jpg"
-                                    alt="Minotti Accessories Collection"
-                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        </div>
-
-                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
-
-                        <div class="absolute bottom-6 left-6 right-6 text-white">
-                            <h3 class="text-2xl font-light tracking-wide mb-2">Accessories</h3>
-                            <p class="text-sm uppercase tracking-wider opacity-90">Explore Collection →</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Collection 6: Beds -->
-            <div class="group cursor-pointer">
-                <a href="https://www.minotti.com/en/beds" target="_blank" class="block">
-                    <div class="relative overflow-hidden bg-white">
-                        <div class="aspect-[4/3] overflow-hidden">
-                            <img src="https://www.minotti.com/media/immagini/35852_t_ANTEPRIMA_beds.jpg"
-                                    alt="Minotti Beds Collection"
-                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        </div>
-
-                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
-
-                        <div class="absolute bottom-6 left-6 right-6 text-white">
-                            <h3 class="text-2xl font-light tracking-wide mb-2">Beds</h3>
-                            <p class="text-sm uppercase tracking-wider opacity-90">Explore Collection →</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-        </div>
-
-        <!-- View All Collections CTA -->
-        <div class="text-center mt-12">
-            <a href="https://www.minotti.com/en/products"
-                    target="_blank"
-                    class="inline-block bg-[#1e1e1e] text-white px-8 py-3 text-sm font-semibold tracking-wider uppercase hover:bg-[#333] transition-colors">
-                View All Collections
-            </a>
-        </div>
+        <?php endif; ?>
 
     </div>
 </section>
