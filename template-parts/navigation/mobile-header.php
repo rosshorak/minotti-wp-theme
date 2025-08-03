@@ -1,6 +1,6 @@
 <?php
 /**
- * Mobile Header Template Part
+ * Mobile Header Template Part with Icon 3 Hamburger
  *
  * @package TailPress
  */
@@ -15,10 +15,11 @@
         </a>
     </div>
 
-    <!-- Mobile Menu Toggle -->
-    <button id="primary-menu-toggle" class="flex flex-col items-center justify-center w-8 h-8 space-y-1 focus:outline-none cursor-pointer" aria-label="Toggle menu">
-        <span class="block w-6 h-0.5 bg-white transition-transform duration-300"></span>
-        <span class="block w-6 h-0.5 bg-white transition-opacity duration-300"></span>
-        <span class="block w-6 h-0.5 bg-white transition-transform duration-300"></span>
+    <!-- Icon 3 Hamburger Menu Toggle -->
+    <button id="primary-menu-toggle" class="hamburger-icon3" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </button>
 </div>

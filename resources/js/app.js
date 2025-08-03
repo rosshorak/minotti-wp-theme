@@ -3,27 +3,18 @@ window.addEventListener('load', function () {
     let mainNavigationToggle = document.getElementById('primary-menu-toggle')
 
     if(mainNavigation && mainNavigationToggle) {
-        // Get hamburger lines for animation
-        const hamburgerLines = mainNavigationToggle.querySelectorAll('span')
-
         mainNavigationToggle.addEventListener('click', function (e) {
             e.preventDefault()
 
             // Toggle navigation visibility
             mainNavigation.classList.toggle('hidden')
 
-            // Animate hamburger to X
-            if (mainNavigation.classList.contains('hidden')) {
-                // Menu is now hidden - reset to hamburger
-                hamburgerLines[0].style.transform = 'rotate(0deg) translate(0, 0)'
-                hamburgerLines[1].style.opacity = '1'
-                hamburgerLines[2].style.transform = 'rotate(0deg) translate(0, 0)'
-            } else {
-                // Menu is now visible - animate to X
-                hamburgerLines[0].style.transform = 'rotate(45deg) translate(5px, 5px)'
-                hamburgerLines[1].style.opacity = '0'
-                hamburgerLines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)'
-            }
+            // Toggle hamburger animation class for Icon 3
+            mainNavigationToggle.classList.toggle('active')
+
+            // Update aria-expanded for accessibility
+            const isExpanded = !mainNavigation.classList.contains('hidden')
+            mainNavigationToggle.setAttribute('aria-expanded', isExpanded)
         })
 
         // Close mobile menu when clicking outside
@@ -31,10 +22,8 @@ window.addEventListener('load', function () {
             if (!mainNavigationToggle.contains(e.target) && !mainNavigation.contains(e.target)) {
                 if (!mainNavigation.classList.contains('hidden')) {
                     mainNavigation.classList.add('hidden')
-                    // Reset hamburger animation
-                    hamburgerLines[0].style.transform = 'rotate(0deg) translate(0, 0)'
-                    hamburgerLines[1].style.opacity = '1'
-                    hamburgerLines[2].style.transform = 'rotate(0deg) translate(0, 0)'
+                    mainNavigationToggle.classList.remove('active')
+                    mainNavigationToggle.setAttribute('aria-expanded', 'false')
                 }
             }
         })
@@ -43,10 +32,8 @@ window.addEventListener('load', function () {
         window.addEventListener('resize', function() {
             if (window.innerWidth >= 960) { // lg breakpoint
                 mainNavigation.classList.add('hidden')
-                // Reset hamburger animation
-                hamburgerLines[0].style.transform = 'rotate(0deg) translate(0, 0)'
-                hamburgerLines[1].style.opacity = '1'
-                hamburgerLines[2].style.transform = 'rotate(0deg) translate(0, 0)'
+                mainNavigationToggle.classList.remove('active')
+                mainNavigationToggle.setAttribute('aria-expanded', 'false')
             }
         })
     }
