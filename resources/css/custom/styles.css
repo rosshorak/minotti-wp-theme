@@ -1,29 +1,13 @@
-
-/*WPForms in general*/
-.menu-item-has-children {
-    @apply relative;
+/* Products section mobile styling */
+.products-mobile {
+    @apply border-b border-gray-600 pb-4 mb-4 lg:border-none lg:pb-0 lg:mb-0;
 }
 
-.sub-menu {
-    @apply absolute top-full left-0 bg-[#1e1e1e] min-w-[200px] opacity-0 invisible transition-all duration-200 z-50;
+.products-mobile a {
+    @apply text-gray-300 hover:text-white;
 }
 
-.menu-item-has-children:hover .sub-menu {
-    @apply opacity-100 visible;
-}
 
-/*WPForms in general*/
-form.wpforms-form {
-    .wpforms-field {
-        @apply py-2;
-    }
-    .wpforms-field-label {
-        @apply font-medium !mb-1 !text-sm;
-    }
-    button[type=submit] {
-        @apply !bg-[#1e1e1e] !text-sm tracking-wider;
-    }
-}
 
 
 

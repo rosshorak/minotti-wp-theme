@@ -3,7 +3,10 @@
 @import './theme.css';
 @import './utilities.css';
 @import './custom.css' layer(utilities);
+
 @import './custom/styles.css';
+@import './custom/menu.css';
+@import './custom/wpforms.css';
 
 @source '../../vendor/tailpress/framework/**/*.php';
 @source '../../vendor/tailpress/framework/**/**/*.php';

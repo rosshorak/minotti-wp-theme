@@ -1,0 +1,81 @@
+/* Mobile Menu Enhancements */
+
+/* Hamburger menu button animations */
+#primary-menu-toggle {
+    span {
+        transform-origin: center;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+/* Mobile navigation styling */
+#primary-navigation {
+    @apply relative z-40;
+    animation: slideIn 0.3s ease-out;
+
+    &.hidden {
+        animation: slideOut 0.3s ease-in;
+    }
+
+    /* Mobile menu links */
+    a {
+        @apply block py-3 px-4 text-white hover:text-gray-300 transition-colors duration-200 border-b border-gray-700 lg:border-none;
+    }
+
+    li:last-child a {
+        @apply border-b-0;
+    }
+
+    /* Mobile submenu styling */
+    .sub-menu {
+        @apply static opacity-100 visible bg-transparent shadow-none mt-2 ml-4 lg:absolute lg:bg-[#1e1e1e] lg:min-w-[200px] lg:opacity-0 lg:invisible lg:transition-all lg:duration-200 lg:z-50;
+
+        a {
+            @apply text-sm text-gray-300 py-2 border-none lg:text-gray-300 lg:hover:text-white lg:block;
+        }
+    }
+
+    /* Dropdown arrows for mobile */
+    .menu-item-has-children > a {
+        &::after {
+            content: '→';
+            @apply float-right transition-transform duration-200 lg:hidden;
+        }
+
+        &[aria-expanded="true"]::after {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+/* Products section mobile styling */
+.products-mobile {
+    @apply border-b border-gray-600 pb-4 mb-4 lg:border-none lg:pb-0 lg:mb-0;
+
+    a {
+        @apply text-gray-300 hover:text-white;
+    }
+}
+
+/* Keyframe animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
