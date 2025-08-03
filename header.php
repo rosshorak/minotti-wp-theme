@@ -13,7 +13,7 @@
 <div id="page" class="min-h-screen flex flex-col">
     <?php do_action('tailpress_header'); ?>
 
-    <header class="bg-[#1e1e1e] text-white py-6 relative">
+    <header class="bg-[#1e1e1e] text-white relative">
         <div class="container mx-auto px-4">
 
             <!-- Mobile Header -->

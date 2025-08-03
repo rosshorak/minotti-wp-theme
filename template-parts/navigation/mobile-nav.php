@@ -6,17 +6,17 @@
  */
 ?>
 
-<nav id="primary-navigation" class="lg:hidden mt-6 hidden">
-    <div class="border-t border-gray-600 pt-6">
+<nav id="primary-navigation" class="lg:hidden hidden bg-[#4f4f4f] -mx-4">
+    <div>
         <!-- Products Section for Mobile -->
         <div class="products-mobile">
-            <div class="mb-3">
+            <div>
                 <a href="https://www.minotti.com/en/products" target="_blank"
-                    class="text-lg font-semibold tracking-wider text-white hover:text-gray-300">
+                    class="text-lg uppercase tracking-wider text-white hover:text-gray-300">
                     Products
                 </a>
             </div>
-            <div class="ml-4 space-y-2">
+            <div class="ml-4 space-y-2 sub-menu">
                 <a href="https://www.minotti.com/en/indoor" target="_blank"
                     class="block text-sm text-gray-300 hover:text-white">Indoor</a>
                 <a href="https://www.minotti.com/en/outdoor" target="_blank"
@@ -29,8 +29,8 @@
         wp_nav_menu([
             'theme_location' => 'primary',
             'container' => false,
-            'menu_class' => 'space-y-4',
-            'link_before' => '<span class="block text-lg font-semibold tracking-wider text-white hover:text-gray-300">',
+            'menu_class' => '',
+            'link_before' => '<span class="block text-lg uppercase tracking-wider text-white hover:text-gray-300">',
             'link_after' => '</span>',
             'fallback_cb' => false,
         ]);

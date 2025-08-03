@@ -6,6 +6,7 @@
 
 @import './custom/styles.css';
 @import './custom/menu.css';
+@import './custom/hamburger.css';
 @import './custom/wpforms.css';
 
 @source '../../vendor/tailpress/framework/**/*.php';

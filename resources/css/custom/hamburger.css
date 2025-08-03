@@ -1,0 +1,45 @@
+/* Icon 3 Hamburger Menu Styles */
+.hamburger-icon3 {
+    @apply w-8 h-6 relative cursor-pointer bg-transparent border-0 p-0 outline-none;
+}
+
+.hamburger-icon3 span {
+    @apply block absolute w-full bg-white rounded-sm opacity-100 left-0;
+    height: 3px;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.hamburger-icon3 span:nth-child(1) {
+    top: 0px;
+}
+
+.hamburger-icon3 span:nth-child(2),
+.hamburger-icon3 span:nth-child(3) {
+    top: 10px;
+}
+
+.hamburger-icon3 span:nth-child(4) {
+    top: 20px;
+}
+
+/* Active state - Icon 3 animation */
+.hamburger-icon3.active span:nth-child(1) {
+    top: 10px;
+    width: 0%;
+    left: 50%;
+}
+
+.hamburger-icon3.active span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.hamburger-icon3.active span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.hamburger-icon3.active span:nth-child(4) {
+    top: 10px;
+    width: 0%;
+    left: 50%;
+}

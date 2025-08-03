@@ -6,7 +6,7 @@
  */
 ?>
 
-<div class="lg:hidden flex items-center justify-between">
+<div class="lg:hidden flex items-center justify-between py-6">
     <!-- Mobile Logo -->
     <div class="flex-1">
         <a href="<?php echo home_url(); ?>">

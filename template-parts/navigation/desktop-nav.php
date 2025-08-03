@@ -6,7 +6,7 @@
  */
 ?>
 
-<div class="hidden lg:flex w-full items-center justify-center">
+<div class="hidden lg:flex w-full items-center justify-center py-6">
     <!-- Left side -->
     <div class="flex items-center gap-6">
         <!-- Products with Mega Dropdown -->
