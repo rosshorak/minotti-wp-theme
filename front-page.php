@@ -20,6 +20,7 @@ get_header();
         get_template_part('template-parts/front-page-intro-about');
         get_template_part('template-parts/front-page-showrooms');
         get_template_part('template-parts/front-page-featured-project');
+        get_template_part('template-parts/front-page-featured-collections');
     ?>
 
 
