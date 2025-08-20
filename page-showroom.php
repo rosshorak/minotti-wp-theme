@@ -69,6 +69,14 @@ $page_title = get_field('page_title');
             ?>
 
 
+            <!-- General Contact Form -->
+            <div class="max-w-3xl">
+                <div id="contact-page-contact-form-cont">
+                    <?php echo do_shortcode('[wpforms id="105" title="false"]'); ?>
+                </div>
+            </div>
+
+
         </div>
 
 
