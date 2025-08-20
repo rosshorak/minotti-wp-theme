@@ -120,11 +120,6 @@ $opening_times = get_field('opening_times');
                             <img src="<?php echo $google_map_url_joburg ?>" alt="<?php echo $google_map_url_joburg; ?>" class="w-full object-cover">
                         </a>
                     </div>
-                    <div>
-                        <div class="mt-8">
-                            <img src="<?php echo $showroom_image_url ?>" alt="<?php echo $showroom_image_alt; ?>" class="w-full object-cover">
-                        </div>
-                    </div>
                 </div>
 
             </div>
