@@ -27,8 +27,7 @@
     <div class="shrink-1 mx-14">
         <div>
             <a href="<?php echo home_url(); ?>">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/Minotti-Logo.png" alt="Logo" class="mx-auto w-[160px] d-block">
-                <div class="uppercase text-xs font-semibold mt-2 opacity-80">Cape Town | Johannesburg</div>
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/Minotti-Logo-SA.png" alt="Logo" class="mx-auto w-[160px] d-block">
             </a>
         </div>
     </div>

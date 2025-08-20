@@ -10,8 +10,7 @@
     <!-- Mobile Logo -->
     <div class="flex-1">
         <a href="<?php echo home_url(); ?>">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/Minotti-Logo.png" alt="Logo" class="w-[160px]">
-            <div class="uppercase text-[11px] font-semibold mt-1 opacity-80">Cape Town | Johannesburg</div>
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/Minotti-Logo-SA.png" alt="Logo" class="w-[160px]">
         </a>
     </div>
 

@@ -17,6 +17,8 @@ $showroom_image_url = get_field('showroom_image')['url'];
 $showroom_image_alt = get_field('showroom_image')['alt'];
 $google_map_url = get_field('google_map_image')['url'];
 $google_map_alt = get_field('google_map_image')['alt'];
+$google_map_url_joburg = get_field('google_map_image_joburg')['url'];
+$google_map_alt_joburg = get_field('google_map_image_joburg')['alt'];
 $address = get_field('address');
 $address_joburg = get_field('address_joburg');
 $opening_times = get_field('opening_times');
@@ -86,25 +88,43 @@ $opening_times = get_field('opening_times');
                         <?php echo $opening_times; ?>
                     </div>
 
-                    <!-- Physical Address -->
-                    <div>
-                        <h3 class="text-lg font-medium mb-2">Cape Town</h3>
-                        <?php echo $address; ?>
-                    </div>
 
-                    <div>
-                        <h3 class="text-lg font-medium mb-2">Johannesburg</h3>
-                        <?php echo $address_joburg; ?>
+                    <!-- Physical Address -->
+                    <div class="flex flex-col sm:flex-row gap-6">
+                        <!-- Cape Town -->
+                        <div class="sm:w-1/2">
+                            <h3 class="text-lg font-medium mb-2">Cape Town</h3>
+                            <?php echo $address; ?>
+                        </div>
+
+                        <!-- Johannesburg -->
+                        <div class="sm:w-1/2">
+                            <h3 class="text-lg font-medium mb-2">Johannesburg</h3>
+                            <?php echo $address_joburg; ?>
+                        </div>
                     </div>
 
                 </div>
 
                 <!-- Image Column -->
-                <div class="md:w-1/2 space-y-8 contact-page-images">
-                    <img src="<?php echo $showroom_image_url ?>" alt="<?php echo $showroom_image_alt; ?>" class="w-full object-cover">
-                    <a href="https://goo.gl/maps/8DtoZGHRxCp" target="_blank" class="block">
-                        <img src="<?php echo $google_map_url ?>" alt="<?php echo $google_map_url; ?>" class="w-full object-cover">
-                    </a>
+                <div class="md:w-1/2 space-y-6 contact-page-images">
+                    <div>
+                        <a href="https://goo.gl/maps/8DtoZGHRxCp" target="_blank" class="block">
+                            <div class="text-sm mb-1.5 font-medium">Cape Town Showroom</div>
+                            <img src="<?php echo $google_map_url ?>" alt="<?php echo $google_map_url; ?>" class="w-full object-cover">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://maps.app.goo.gl/LkjS9XFuYdJuK4Ms6" target="_blank" class="block">
+                            <div class="text-sm mb-1.5 font-medium">Johannesburg Showroom</div>
+                            <img src="<?php echo $google_map_url_joburg ?>" alt="<?php echo $google_map_url_joburg; ?>" class="w-full object-cover">
+                        </a>
+                    </div>
+                    <div>
+                        <div class="mt-8">
+                            <img src="<?php echo $showroom_image_url ?>" alt="<?php echo $showroom_image_alt; ?>" class="w-full object-cover">
+                        </div>
+                    </div>
                 </div>
 
             </div>
