@@ -18,6 +18,7 @@ $showroom_image_alt = get_field('showroom_image')['alt'];
 $google_map_url = get_field('google_map_image')['url'];
 $google_map_alt = get_field('google_map_image')['alt'];
 $address = get_field('address');
+$address_joburg = get_field('address_joburg');
 $opening_times = get_field('opening_times');
 ?>
 
@@ -87,8 +88,13 @@ $opening_times = get_field('opening_times');
 
                     <!-- Physical Address -->
                     <div>
-                        <h3 class="text-lg font-medium mb-2">Physical Address</h3>
+                        <h3 class="text-lg font-medium mb-2">Cape Town</h3>
                         <?php echo $address; ?>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-medium mb-2">Johannesburg</h3>
+                        <?php echo $address_joburg; ?>
                     </div>
 
                 </div>
