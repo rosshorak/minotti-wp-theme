@@ -19,7 +19,6 @@ while (have_posts()) : the_post();
     $year = get_field('year');
     $furniture_supplier = get_field('furniture_supplier');
     $photography = get_field('photography');
-    $gallery = get_field('gallery_images');
     $featured_products = get_field('featured_products');
 ?>
 
@@ -114,25 +113,86 @@ while (have_posts()) : the_post();
         </div>
     </section>
 
+    <!-- More Projects Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-screen-2xl">
 
-    <!-- Gallery Section -->
-    <?php if ($gallery && count($gallery) > 1): ?>
-        <section class="py-16 bg-gray-50">
-            <div class="container mx-auto px-4 max-w-screen-2xl">
-                <h3 class="text-2xl font-light text-center mb-12">Project Gallery</h3>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <?php foreach (array_slice($gallery, 1) as $image): ?>
-                        <div class="aspect-[4/3] overflow-hidden">
-                            <img src="<?php echo esc_url($image['sizes']['large']); ?>" 
-                                 alt="<?php echo esc_attr($image['alt']); ?>" 
-                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-700 cursor-pointer">
-                        </div>
-                    <?php endforeach; ?>
+            <div class="text-center mb-16">
+                <h2 class="minotti-section-header">View More Projects</h2>
+                <div class="text-center uppercase text-sm tracking-wider opacity-70">
+                    Explore Our Portfolio
                 </div>
             </div>
-        </section>
-    <?php endif; ?>
+
+            <?php
+            // Get other projects (excluding current project)
+            $current_project_id = get_the_ID();
+            $other_projects = new WP_Query(array(
+                'post_type' => 'project',
+                'posts_per_page' => 6, // Show 6 other projects
+                'post_status' => 'publish',
+                'post__not_in' => array($current_project_id),
+                'orderby' => 'rand', // Random order to show variety
+            ));
+
+            if ($other_projects->have_posts()) : ?>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <?php while ($other_projects->have_posts()) : $other_projects->the_post();
+                        $other_title = get_field('title');
+                        $other_project_subtitle = get_field('project_subtitle');
+                        $other_project_location = get_field('project_location');
+                        $other_hero_image = get_field('hero_image');
+                        ?>
+
+                        <article class="group">
+                            <a href="<?php the_permalink(); ?>" class="block">
+                                <!-- Project Image -->
+                                <?php if ($other_hero_image): ?>
+                                    <div class="aspect-[4/3] overflow-hidden mb-4">
+                                        <img src="<?php echo esc_url($other_hero_image['sizes']['large'] ?? $other_hero_image['url']); ?>"
+                                            alt="<?php echo esc_attr($other_hero_image['alt']); ?>"
+                                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                                    </div>
+                                <?php endif; ?>
+
+                                <!-- Project Details -->
+                                <div class="space-y-2">
+                                    <h3 class="text-lg font-medium text-zinc-900 group-hover:opacity-80 transition-opacity">
+                                        <?php echo esc_html($other_title); ?><?php if ($other_project_subtitle): ?>, <?php echo esc_html($other_project_subtitle); ?><?php endif; ?>
+                                    </h3>
+
+                                    <?php if ($other_project_location): ?>
+                                        <div class="text-sm text-zinc-600 uppercase tracking-wider">
+                                            <?php echo esc_html($other_project_location); ?>, South Africa
+                                        </div>
+                                    <?php endif; ?>
+
+                                    <div class="text-sm text-zinc-500 group-hover:text-zinc-700 transition-colors">
+                                        View Project →
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+
+                    <?php endwhile; ?>
+                </div>
+
+                <!-- View All Projects Button -->
+                <div class="text-center">
+                    <a href="<?php echo get_post_type_archive_link('project'); ?>"
+                        class="inline-flex items-center px-8 py-3 bg-[#1e1e1e] text-white text-sm font-semibold tracking-wider uppercase hover:bg-[#333] transition-colors duration-200 rounded-full">
+                        View All Projects →
+                    </a>
+                </div>
+
+            <?php endif;
+
+            wp_reset_postdata();
+            ?>
+
+        </div>
+    </section>
+
 
 </main>
 
