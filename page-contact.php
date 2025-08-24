@@ -8,10 +8,7 @@ get_header();
 //page content
 $hero_banner_image = get_field('hero_banner_image');
 $page_title = get_field('contact_page_title');
-$showroom_telephone = get_field('telephone');
-$showroom_email = get_field('email');
-$studio_telephone = get_field('studio_telephone');
-$studio_email = get_field('studio_email');
+
 $info_paragraph = get_field('info_paragraph');
 $showroom_image_url = get_field('showroom_image')['url'];
 $showroom_image_alt = get_field('showroom_image')['alt'];
@@ -47,27 +44,33 @@ $opening_times = get_field('opening_times');
                 <div class="md:w-1/2 space-y-6">
 
                     <!-- Showroom and Studio Details -->
+                    <?php
+                    $telephone_1 = get_field('telephone_1');
+                    $email_1 = get_field('email_1');
+                    $telephone_2 = get_field('telephone_2');
+                    $email_2 = get_field('email_2');
+                    ?>
                     <div class="flex flex-col sm:flex-row gap-6">
 
-                        <!-- Showroom -->
+                        <!-- Cape Town -->
                         <div class="sm:w-1/2">
                             <div>
-                                <h3 class="text-lg font-medium mb-2">Showroom</h3>
+                                <h3 class="text-lg font-medium mb-2">Cape Town</h3>
                             </div>
-                            <?php echo $showroom_telephone; ?><br>
-                            <a href="mailto:<?php echo $showroom_email; ?>">
-                                <?php echo $showroom_email; ?>
+                            <?= $telephone_1; ?><br>
+                            <a href="mailto:<?= $email_1; ?>">
+                                <?= $email_1; ?>
                             </a>
                         </div>
 
-                        <!-- Studio -->
+                        <!-- Johannesburg -->
                         <div class="sm:w-1/2">
                             <div>
-                                <h3 class="text-lg font-medium mb-2">Design Studio</h3>
+                                <h3 class="text-lg font-medium mb-2">Johannesburg</h3>
                             </div>
-                            <?php echo $studio_telephone; ?><br>
-                            <a href="mailto:<?php echo $studio_email; ?>">
-                                <?php echo $studio_email; ?>
+                            <?= $telephone_2; ?><br>
+                            <a href="mailto:<?= $email_2; ?>">
+                                <?= $email_2; ?>
                             </a>
                         </div>
                     </div>
