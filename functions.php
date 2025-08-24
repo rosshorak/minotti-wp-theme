@@ -39,3 +39,20 @@ function tailpress(): TailPress\Framework\Theme
 }
 
 tailpress();
+
+
+/**
+ * Add canonical tags for projects with original URLs
+ */
+add_action('wp_head', function() {
+    if (is_singular('project')) {
+        $original_url = get_field('original_url');
+        if ($original_url) {
+            // Remove WordPress's default canonical
+            remove_action('wp_head', 'rel_canonical');
+
+            // Add our custom canonical
+            echo '<link rel="canonical" href="' . esc_url($original_url) . '">' . "\n";
+        }
+    }
+}, 1); // Priority 1 to run early

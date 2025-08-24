@@ -20,6 +20,7 @@ while (have_posts()) : the_post();
     $furniture_supplier = get_field('furniture_supplier');
     $photography = get_field('photography');
     $featured_products = get_field('featured_products');
+    $smart_slider_gallery_id = get_field('smart_slider_gallery_id');
 ?>
 
 <main class="bg-white">
@@ -107,9 +108,11 @@ while (have_posts()) : the_post();
             </div>
 
 
-            <div>
-                <?= do_shortcode('[smartslider3 slider="3"]') ?>
-            </div>
+            <?php if (!empty($smart_slider_gallery_id) && $smart_slider_gallery_id > 0): ?>
+                <div>
+                    <?= do_shortcode('[smartslider3 slider="' . esc_attr($smart_slider_gallery_id) . '"]') ?>
+                </div>
+            <?php endif; ?>
         </div>
     </section>
 
