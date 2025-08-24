@@ -83,15 +83,6 @@ $page_title = get_field('page_title');
                                 <p class="text-lg leading-relaxed mb-6">
                                     Experience Minotti's Italian luxury firsthand. Visit our showroom to explore our complete collection and receive personalized design consultation from our expert team.
                                 </p>
-                                <div class="text-base space-y-2">
-                                    <p><strong>What to expect:</strong></p>
-                                    <ul class="list-disc list-inside space-y-1 text-gray-700 ml-4">
-                                        <li>Private showroom tour</li>
-                                        <li>Personal design consultation</li>
-                                        <li>Fabric and finish samples</li>
-                                        <li>Custom configuration options</li>
-                                    </ul>
-                                </div>
                             </div>
 
                             <!-- Contact Form -->
@@ -116,17 +107,21 @@ $page_title = get_field('page_title');
                                         <h3 class="text-xl font-medium mb-4">Visit Our Cape Town Showroom</h3>
                                         <div class="space-y-3 text-gray-700">
                                             <div>
-                                                <p><strong>Address:</strong><br>
-                                                    <?= get_field('address', 19) ?: 'Waterway House - North, 3 Dock Road<br>V&A Waterfront, Cape Town, 8001'; ?></p>
+                                                <p>
+                                                    <span class="font-semibold">Address:</span><br>
+                                                    <?= get_field('address', 23); ?>
+                                                </p>
                                             </div>
                                             <div>
-                                                <p><strong>Contact:</strong><br>
-                                                    Tel: <?= get_field('telephone', 19) ?: '+27 21 425 5570'; ?><br>
-                                                    Email: <?= get_field('email', 19) ?: 'info@minotti.co.za'; ?></p>
+                                                <p>
+                                                    <span class="font-semibold">Contact:</span><br>
+                                                    Tel: <?= get_field('telephone_1', 23) ?><br>
+                                                    Email: <?= get_field('email_1', 23) ?>
+                                                </p>
                                             </div>
                                             <div>
-                                                <p><strong>Opening Hours:</strong><br>
-                                                    <?= get_field('opening_times', 19) ?: 'Monday - Friday: 9:00 - 17:00<br>Saturday: 9:00 - 14:00<br>Sunday: Closed'; ?></p>
+                                                <span class="font-semibold">Opening Times:</span><br>
+                                                <?= get_field('opening_times', 23) ?>
                                             </div>
                                         </div>
                                     </div>
@@ -156,17 +151,21 @@ $page_title = get_field('page_title');
                                         <h3 class="text-xl font-medium mb-4">Visit Our Johannesburg Showroom</h3>
                                         <div class="space-y-3 text-gray-700">
                                             <div>
-                                                <p><strong>Address:</strong><br>
-                                                    <?= get_field('address_joburg', 21) ?: 'Design Quarter<br>Corner William Nicol & Leslie Avenue<br>Fourways, Johannesburg, 2055'; ?></p>
+                                                <p>
+                                                    <span class="font-semibold">Address:</span><br>
+                                                    <?= get_field('address_joburg', 23); ?>
+                                                </p>
                                             </div>
                                             <div>
-                                                <p><strong>Contact:</strong><br>
-                                                    Tel: <?= get_field('telephone', 21) ?: '+27 11 467 4200'; ?><br>
-                                                    Email: <?= get_field('email', 21) ?: 'joburg@minotti.co.za'; ?></p>
+                                                <p>
+                                                    <span class="font-semibold">Contact:</span><br>
+                                                    Tel: <?= get_field('telephone_2', 23) ?><br>
+                                                    Email: <?= get_field('email_2', 23) ?>
+                                                </p>
                                             </div>
                                             <div>
-                                                <p><strong>Opening Hours:</strong><br>
-                                                    <?= get_field('opening_times', 21) ?: 'Monday - Friday: 9:00 - 17:00<br>Saturday: 9:00 - 14:00<br>Sunday: Closed'; ?></p>
+                                                <span class="font-semibold">Opening Times:</span><br>
+                                                <?= get_field('opening_times', 23) ?>
                                             </div>
                                         </div>
                                     </div>
