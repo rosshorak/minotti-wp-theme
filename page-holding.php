@@ -23,7 +23,7 @@
 <div id="page" class="min-h-screen flex flex-col">
     <?php do_action('tailpress_header'); ?>
 
-    <header class="bg-[#1e1e1e] text-white relative min-h-[108px]">
+    <header class="bg-[#1e1e1e] text-white relative" style="height: 100px;">
         <div class="container mx-auto px-4">
             
             <!-- Mobile Header -->
@@ -48,23 +48,22 @@
         </div>
     </header>
 
-    <div id="content" class="site-content grow">
+    <div id="content" class="site-content grow bg-[#1e1e1e]">
         <?php do_action('tailpress_content_start'); ?>
         <main>
-            
             <div class="relative">
                 <?php
                     echo do_shortcode('[smartslider3 slider="2"]');
                 ?>
                 
                 <!-- Overlay Content -->
-                <div class="absolute inset-0 flex items-center justify-center">
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
                     <div class="text-center text-white">
-                        <h1 class="text-4xl md:text-6xl font-light tracking-widest mb-8">
+                        <h1 class="text-3xl md:text-4xl font-light tracking-widest mb-8">
                             NEW SHOWROOM // OPENING SOON
                         </h1>
                         <div class="mt-12">
-                            <a href="#" class="inline-block border border-white px-8 py-3 text-sm font-semibold tracking-widest hover:bg-white hover:text-black transition-colors duration-300">
+                            <a href="https://www.minotti.com/en" target="_blank" class="inline-block border border-white px-8 py-3 text-sm font-semibold tracking-widest hover:bg-white hover:text-black transition-colors duration-300 pointer-events-auto">
                                 BROWSE THE COLLECTION
                             </a>
                         </div>
@@ -74,13 +73,15 @@
 
         </main>
         <?php do_action('tailpress_content_end'); ?>
+
+        <footer class="bg-[#1e1e1e] text-white py-4">
+            <div class="container mx-auto px-4 text-center">
+                <p class="text-sm tracking-widest mb-0">© <?php echo date('Y'); ?> Minotti. All rights reserved.</p>
+            </div>
+        </footer>
     </div>
 
-    <footer class="bg-[#1e1e1e] text-white py-4">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-sm tracking-widest">© <?php echo date('Y'); ?> Minotti. All rights reserved.</p>
-        </div>
-    </footer>
+
 </div>
 
 <?php do_action('tailpress_site_after'); ?>

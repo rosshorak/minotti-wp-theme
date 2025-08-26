@@ -17,7 +17,7 @@
     </a>
 
     <!-- Mega Dropdown - Full Width -->
-    <div class="fixed top-[108px] left-0 w-full bg-[#1e1e1e] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-50 border-t border-gray-600">
+    <div class="fixed left-0 w-full bg-[#1e1e1e] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-50 border-t border-gray-600" style="top: 100px;">
         <div class="container mx-auto px-4 max-w-screen-xl">
             <div class="grid grid-cols-5 gap-6 py-8">
 
