@@ -1,6 +1,6 @@
 <?php
 /**
- * Main template file for displaying the front page.
+ * Template Name: Home Front Page
  *
  * @package TailPress
  */
