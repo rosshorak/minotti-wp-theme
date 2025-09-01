@@ -172,7 +172,7 @@ $page_title = get_field('page_title');
 
                                     <!-- Johannesburg Map -->
                                     <div>
-                                        <a href="https://maps.app.goo.gl/LkjS9XFuYdJuK4Ms6" target="_blank" class="block hover:opacity-90 transition-opacity">
+                                        <a href="https://maps.app.goo.gl/CGwTqe92x7EhsrZa8" target="_blank" class="block hover:opacity-90 transition-opacity">
                                             <div class="text-sm mb-2 font-medium">Get Directions</div>
                                             <?php
                                             // Get Johannesburg map from contact page (ID 23)

@@ -34,8 +34,8 @@ $opening_times = get_field('opening_times');
 
         <section class="mx-auto px-4 max-w-screen-2xl py-20">
 
-            <div class="mb-14 w-[1080px] max-w-full">
-                <p class="text-lg">Welcome to Minotti Cape Town & Johannesburg. For enquiries, assistance, or showroom appointments, please reach out using the contact details below. Our team will respond as promptly as possible.</p>
+            <div class="mb-16 w-[1080px] max-w-full mx-auto">
+                <p class="text-lg text-center">Welcome to Minotti Cape Town & Johannesburg. For enquiries, assistance, or showroom appointments, please reach out using the contact details below. Our team will respond as promptly as possible.</p>
             </div>
 
             <div class="flex flex-col md:flex-row gap-12">
@@ -118,7 +118,7 @@ $opening_times = get_field('opening_times');
                         </a>
                     </div>
                     <div>
-                        <a href="https://maps.app.goo.gl/LkjS9XFuYdJuK4Ms6" target="_blank" class="block">
+                        <a href="https://maps.app.goo.gl/CGwTqe92x7EhsrZa8" target="_blank" class="block">
                             <div class="text-sm mb-1.5 font-medium">Johannesburg Showroom</div>
                             <img src="<?php echo $google_map_url_joburg ?>" alt="<?php echo $google_map_url_joburg; ?>" class="w-full object-cover">
                         </a>

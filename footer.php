@@ -15,8 +15,8 @@
 <div id="instagram-cont" class="bg-[#1e1e1e]">
     <div class="container mx-auto px-4 max-w-screen-2xl pb-10 pt-14">
         <div class="mb-1.5">
-            <a class="text-white text-lg hover:text-gray-400 transition" href="https://www.instagram.com/minotti_cape_town/" target="_blank">
-                Follow <span class="font-medium">Minotti_Cape_Town</span> on Instagram
+            <a class="text-white text-lg hover:text-gray-400 transition" href="https://www.instagram.com/minotti_southafrica/" target="_blank">
+                Follow <span class="font-medium">Minotti_SouthAfrica</span> on Instagram
             </a>
         </div>
         <div>
@@ -44,14 +44,12 @@
             <div class="md:w-1/3 space-y-8">
                 <div class="flex gap-4 flex-wrap">
                     <a href="https://www.facebook.com/limelinecapetown/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/facebook.svg" alt="Facebook" class="h-6"></a>
-                    <a href="https://www.instagram.com/minotti_cape_town/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/instagram.svg" alt="Instagram" class="h-6"></a>
+                    <a href="https://www.instagram.com/minotti_southafrica/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/instagram.svg" alt="Instagram" class="h-6"></a>
                 </div>
 
                 <!-- Footer Links -->
                 <ul class="space-y-2.5 tracking-wider text-[13px]">
                     <li><a href="/privacy-policy" class="hover:text-gray-400 transition">Privacy policy</a></li>
-                    <li><a href="/legal-notice" class="hover:text-gray-400 transition">Cookie policy</a></li>
-                    <li><a href="/corporate" class="hover:text-gray-400 transition">Terms & Conditions</a></li>
                 </ul>
             </div>
         </div>
