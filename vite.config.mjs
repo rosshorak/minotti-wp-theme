@@ -9,7 +9,7 @@ export default defineConfig(({ command }) => {
         server: {
             port: 3000,
             cors: true,
-            origin: 'http://localhost:10106',
+            origin: 'http://minotti.local',
         },
         build: {
             manifest: true,
