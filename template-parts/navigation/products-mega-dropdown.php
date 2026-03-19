@@ -7,8 +7,7 @@
 ?>
 
 <div class="relative group">
-    <a href="https://www.minotti.com/en/products"
-        target="_blank"
+    <a href="#"
         class="text-sm font-semibold tracking-widest hover:opacity-80 flex items-center gap-1">
         Products
         <svg class="w-3 h-3 opacity-60" fill="currentColor" viewBox="0 0 20 20">
