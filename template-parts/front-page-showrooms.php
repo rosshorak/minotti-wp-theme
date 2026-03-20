@@ -45,7 +45,7 @@ $johannesburg_hero_banner_image = get_field('hero_banner_image', $johannesburg_p
         <div class="md:w-1/3 pt-12">
             <div class="uppercase font-medium mb-6">Johannesburg Showroom</div>
             <div class="mb-5">
-                <p>Experience luxury Italian design in Johannesburg's premier furniture destination. Our curated showroom features Minotti's latest collections alongside timeless classics, offering personalized design consultations to bring sophisticated Italian style to your home.</p>
+                <p>Located in the heart of Rosebank, the Minotti Johannesburg flagship store offers architects, designers and private clients the opportunity to experience the latest collections in an immersive setting. Our team welcomes you to explore materials, configurations and design possibilities within a carefully curated architectural space.</p>
             </div>
             <div>
                 <p><a href="<?php echo get_permalink($johannesburg_page_id); ?>" class="hover:font-medium">View showroom →</a></p>

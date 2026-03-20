@@ -73,16 +73,31 @@ $page_title = get_field('page_title');
                 <div class="max-w-screen-2xl mx-auto">
                     <div class="flex flex-col lg:flex-row gap-12 items-start">
 
+                        <?php
+                        $current_page_id = get_the_ID();
+                        $is_cape_town = ($current_page_id == 19);
+                        $is_johannesburg = ($current_page_id == 21);
+                        ?>
+
                         <!-- Left Column: CTA and Contact Form -->
                         <div class="lg:w-1/2">
                             <!-- Heading/CTA -->
                             <div class="mb-8">
-                                <h2 class="text-3xl md:text-4xl font-light tracking-wide mb-4">
-                                    Book an Appointment
-                                </h2>
-                                <p class="text-lg leading-relaxed mb-6">
-                                    Experience Minotti's Italian luxury firsthand. Visit our showroom to explore our complete collection and receive personalized design consultation from our expert team.
-                                </p>
+                                <?php if ($is_johannesburg): ?>
+                                    <h2 class="text-3xl md:text-4xl font-light tracking-wide mb-4">
+                                        Visit the Minotti Johannesburg Showroom
+                                    </h2>
+                                    <p class="text-lg leading-relaxed mb-6">
+                                        Located in the heart of Rosebank, the Minotti Johannesburg flagship store offers architects, designers and private clients the opportunity to experience the latest collections in an immersive setting. Our team welcomes you to explore materials, configurations and design possibilities within a carefully curated architectural space.
+                                    </p>
+                                <?php else: ?>
+                                    <h2 class="text-3xl md:text-4xl font-light tracking-wide mb-4">
+                                        Book an Appointment
+                                    </h2>
+                                    <p class="text-lg leading-relaxed mb-6">
+                                        Experience Minotti's Italian luxury firsthand. Visit our showroom to explore our complete collection and receive personalized design consultation from our expert team.
+                                    </p>
+                                <?php endif; ?>
                             </div>
 
                             <!-- Contact Form -->
@@ -93,12 +108,6 @@ $page_title = get_field('page_title');
 
                         <!-- Right Column: Map and Location Info -->
                         <div class="lg:w-1/2">
-                            <?php
-                            // Determine which showroom content to show based on page ID
-                            $current_page_id = get_the_ID();
-                            $is_cape_town = ($current_page_id == 19);
-                            $is_johannesburg = ($current_page_id == 21);
-                            ?>
 
                             <?php if ($is_cape_town): ?>
                                 <!-- Cape Town Map and Info -->
@@ -202,7 +211,7 @@ $page_title = get_field('page_title');
                             Also Visit Our Johannesburg Showroom
                         </h3>
                         <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                            Experience Minotti's Italian luxury in Johannesburg's premier design destination. Our Rosebank showroom offers the same exceptional collection and personalized service in the heart of Gauteng.
+                            Located in the heart of Rosebank, the Minotti Johannesburg flagship store offers architects, designers and private clients the opportunity to experience the latest collections in an immersive setting. Our team welcomes you to explore materials, configurations and design possibilities within a carefully curated architectural space.
                         </p>
                         <a href="<?php echo get_permalink(21); ?>" class="inline-flex items-center gap-2 bg-[#1e1e1e] text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-colors duration-200 text-sm font-medium tracking-wider uppercase">
                             Discover Johannesburg Showroom
